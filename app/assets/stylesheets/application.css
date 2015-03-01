@@ -40,4 +40,14 @@ footer{
 
 }
 
+#books-image {
+	text-align: center;
+}
 
+#books-index img{
+	width:100%;
+}
+
+#books-index h3 {
+	height:50px;
+}
