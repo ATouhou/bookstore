@@ -5,6 +5,10 @@ class PublishersController < ApplicationController
   end
 
   def create
+    @publisher = Category.new(publisher_params)
+    @publisher.save
+
+    redirect_to publishers_path
   end
 
   def update

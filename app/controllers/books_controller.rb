@@ -8,6 +8,10 @@ class BooksController < ApplicationController
   end
 
   def create
+    @book = Category.new(book_params)
+    @book.save
+
+    redirect_to books_path
   end
 
   def update
