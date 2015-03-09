@@ -1,24 +1,24 @@
 <div id="books-show">
-	<h2>Ruby on Rails Power</h2>
+	<h2><%= @book.title %></h2>
 	<div class="books-show-left">
-		<%= image_tag('covers/ruby_on_rails_power.jpg') %>
+		<%= image_tag(@book.coverpath) %>
 	</div>
 	<div class="books-show-right">
 		<h3>Book info:</h3>
 		<ul>
-			<li>Cagegory:<strong></strong> Ruby on Rails </li>
-			<li>Author:<strong></strong> Aneesha Bakharia </li>
-			<li>Publisher:<strong></strong> Course Technology PTR</li>
-			<li>Year:<strong></strong> 2007</li>
-			<li>ISBN:<strong></strong> 1568468468</li>
-			<li>Format:<strong></strong> Paperback</li>
-			<li>Pages:<strong></strong> 678</li>
+			<li>Cagegory:<strong></strong> <%= @book.category.name %> </li>
+			<li>Author:<strong></strong> <%= @book.author.first_name + ' ' + @book.author.last_name %> </li>
+			<li>Publisher:<strong></strong> <%= @book.publisher.name %> </li>
+			<li>Year:<strong></strong> <%= @book.year %></li>
+			<li>ISBN:<strong></strong> <%= @book.isbn %></li>
+			<li>Format:<strong></strong> <%= @book.format %></li>
+			<li>Pages:<strong></strong> <% @book.pages %></li>
 		</ul>
-		<%=link_to "Buy for $5.45","http://www.ebay.com", class:'btn btn-success',target:'_blank' %>
+		<%=link_to "Buy for " + @book.price, @book.buy, class:'btn btn-success',target:'_blank' %>
 	</div>
 	<div class="clearfix"></div>
 	<h4>Excerpt</h4>
-	<p>Lorem ipsum lorem ipsum lorem ipsum</p>
+	<p><%= @book.excerpt %></p>
 
 </div>
 			
